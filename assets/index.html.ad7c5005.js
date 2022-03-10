@@ -1,1 +1,0 @@
-import{_ as e,o as c,c as r}from"./app.51f47d0e.js";const n={};function t(o,_){return c(),r("p",null,"\u524D\u7AEF\u5B66\u4E60\u7B14\u8BB0\u548C\u841D\u535C\u5751")}var s=e(n,[["render",t]]);export{s as default};
