@@ -1,0 +1,1 @@
+const t={key:"v-91675054",path:"/weber/js/prototype.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1646992977e3,contributors:[{name:"YukiAoi",email:"xxz530990200@gmail.com",commits:1}]},filePathRelative:"weber/js/prototype.md"};export{t as data};
