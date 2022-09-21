@@ -23,7 +23,7 @@
 			}
     </script>
     <link rel="icon" href="/images/logo.jpg"><title>YukiAoi's front end notes</title><meta name="description" content="前端学习笔记">
-    <link rel="modulepreload" href="/assets/app.a61d7cd9.js"><link rel="modulepreload" href="/assets/node.html.89aff6ad.js"><link rel="modulepreload" href="/assets/node.html.b11ddefa.js">
+    <link rel="modulepreload" href="/assets/app.ebe36e73.js"><link rel="modulepreload" href="/assets/node.html.2e0e8761.js"><link rel="modulepreload" href="/assets/node.html.87de58a3.js">
     <link rel="stylesheet" href="/assets/style.8f96e109.css">
   </head>
   <body>
@@ -49,7 +49,18 @@
   <span class="token string-property property">&quot;serve&quot;</span><span class="token operator">:</span> <span class="token string">&quot;set NODE_OPTIONS=--openssl-legacy-provider &amp;&amp; vue-cli-service serve --mode serve.dev&quot;</span><span class="token punctuation">,</span>
   <span class="token string-property property">&quot;build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vue-cli-service build&quot;</span>
 <span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="node内存泄漏" tabindex="-1"><a class="header-anchor" href="#node内存泄漏" aria-hidden="true">#</a> Node内存泄漏</h3><h4 id="package-json-1" tabindex="-1"><a class="header-anchor" href="#package-json-1" aria-hidden="true">#</a> package.json</h4><p><code>set NODE_OPTIONS=--max-old-space-size=4096</code></p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// before</span>
+<span class="token string-property property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token string-property property">&quot;serve&quot;</span><span class="token operator">:</span> <span class="token string">&quot;set NODE_OPTIONS=--openssl-legacy-provider &amp;&amp; vue-cli-service serve --mode serve.dev&quot;</span><span class="token punctuation">,</span>
+  <span class="token string-property property">&quot;build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vue-cli-service build&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// after</span>
+<span class="token string-property property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token string-property property">&quot;serve&quot;</span><span class="token operator">:</span> <span class="token string">&quot;set NODE_OPTIONS=--openssl-legacy-provider --max-old-space-size=4096 &amp;&amp; vue-cli-service serve --mode serve.dev&quot;</span><span class="token punctuation">,</span>
+  <span class="token string-property property">&quot;build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vue-cli-service build&quot;</span>
+<span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">上次更新: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: xxz530990200@gmail.com">YukiAoi</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
-    <script type="module" src="/assets/app.a61d7cd9.js" defer></script>
+    <script type="module" src="/assets/app.ebe36e73.js" defer></script>
   </body>
 </html>
